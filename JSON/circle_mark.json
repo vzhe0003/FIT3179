@@ -1,0 +1,35 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 800,
+  "height": 600,
+  "data": {
+    "url": "https://raw.githubusercontent.com/vzhe0003/FIT3179_assignment2/main/world-happiness-report-2021.csv"
+  },
+  "mark": {
+    "type": "circle",
+    "size": 200
+  },
+  "encoding": {
+    "text": {
+      "field": "Country name",
+      "type": "nominal",
+      "title": "Country"
+    },
+    "y": {
+      "field": "Ladder score",
+      "type": "quantitative",
+      "title": "Happiness Score"
+    },
+    "x": {
+      "field": "Regional indicator",
+      "type": "nominal",
+      "title": "Region"
+    },
+    "tooltip": [
+      {"field": "Country name", "type": "nominal", "title": "Country"},
+      {"field": "Ladder score", "type": "quantitative", "title": "Happiness Score"},
+      {"field": "Regional indicator", "type": "nominal", "title": "Region"}
+    ]
+  }
+}
+

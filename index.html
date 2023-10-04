@@ -1,3 +1,56 @@
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+<!--  &lt;!&ndash; Import Vega & Vega-Lite (does not have to be from CDN) &ndash;&gt;-->
+<!--  <script src="https://cdn.jsdelivr.net/npm/vega@5.22.1"></script>-->
+<!--  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.5.0"></script>-->
+<!--  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.21.0"></script>-->
+
+<!--  &lt;!&ndash; CSS file &ndash;&gt;-->
+<!--  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">-->
+
+<!--</head>-->
+<!--<body>-->
+
+<!--<div id="happiness_map"></div>-->
+<!--<div id="bubble_chart"></div>-->
+<!--<div id="circle_mark"></div>-->
+<!--<div id="life_expectancy"></div>-->
+<!--<div id="stacked_barchart"></div>-->
+
+<!--<script type="text/javascript">-->
+
+<!--  var spec1 = "JSON/map.json";-->
+<!--  var spec2 = "JSON/bubble_chart.json";-->
+<!--  var spec3 = "JSON/circle_mark.json";-->
+<!--  var spec4 = "JSON/life_expectancy.json";-->
+<!--  var spec5 = "JSON/stacked_barchart.json";-->
+
+<!--  vegaEmbed('#happiness_map', spec1).then(function(result) {-->
+<!--    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view-->
+<!--  }).catch(console.error);-->
+
+<!--  vegaEmbed('#bubble_chart', spec2).then(function(result) {-->
+<!--    // Access the Vega view instance as result.view-->
+<!--  }).catch(console.error);-->
+
+<!--  vegaEmbed('#circle_mark', spec3).then(function(result) {-->
+<!--    // Access the Vega view instance as result.view-->
+<!--  }).catch(console.error);-->
+
+<!--  vegaEmbed('#life_expectancy', spec4).then(function(result) {-->
+<!--    // Access the Vega view instance as result.view-->
+<!--  }).catch(console.error);-->
+
+<!--  vegaEmbed('#stacked_barchart', spec5).then(function(result) {-->
+<!--    // Access the Vega view instance as result.view-->
+<!--  }).catch(console.error);-->
+
+<!--</script>-->
+
+<!--</body>-->
+<!--</html>-->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,20 +61,50 @@
 
   <!-- CSS file -->
   <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
-
-
 </head>
 <body>
 
-<div id="happiness_map"></div>
+<div id="visualization"></div>
+<div id="visualization1"></div>
+<div id="visualization2"></div>
+<div id="visualization3"></div>
+<div id="visualization4"></div>
+
 
 <script type="text/javascript">
 
-  var spec2 = "JSON/map.json";
-  vegaEmbed('#happiness_map', spec2).then(function(result) {
-    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  var spec = 'JSON/map.json'
+  var spec1 = 'JSON/circle_mark.json'
+  var spec2 = 'JSON/bubbleChart.json';
+  var spec3 = 'JSON/life_expectancy.json';
+  var spec4 = 'JSON/stacked_barchart.json';
+
+  vegaEmbed('#visualization', spec).then(function(result) {
+    // Access the Vega view instance as result.view
   }).catch(console.error);
+
+  vegaEmbed('#visualization1', spec1).then(function(result) {
+    // Access the Vega view instance as result.view
+  }).catch(console.error);
+
+  vegaEmbed('#visualization3', spec3)
+          .then(function (result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+          })
+          .catch(console.error);
+
+  vegaEmbed('#visualization2', spec2).then(function(result) {
+    // Access the Vega view instance as result.view
+  }).catch(console.error);
+
+  vegaEmbed('#visualization4', spec4).then(function(result) {
+    // Access the Vega view instance (result.view) if needed
+  }).catch(console.error);
+
+
+
 </script>
 
 </body>
 </html>
+
