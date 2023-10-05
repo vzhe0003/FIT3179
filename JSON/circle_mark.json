@@ -1,7 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 800,
-  "height": 600,
+  "title": "Happiness Score in Different Region",
+  "width": "container",
+  "height": "container",
   "data": {
     "url": "https://raw.githubusercontent.com/vzhe0003/FIT3179_assignment2/main/data/world-happiness-report-2021.csv"
   },
@@ -18,7 +19,8 @@
     "y": {
       "field": "Ladder score",
       "type": "quantitative",
-      "title": "Happiness Score"
+      "title": "Happiness Score",
+      "scale": {"domain": [2, 8]}
     },
     "x": {
       "field": "Regional indicator",

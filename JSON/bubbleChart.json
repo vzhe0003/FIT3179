@@ -1,7 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 800,
-  "height": 600,
+  "title": "Relation between Happiness and GDP",
+  "width": "container",
+  "height": 500,
   "data": {
     "url": "https://raw.githubusercontent.com/vzhe0003/FIT3179_assignment2/main/data/world-happiness-report-2021.csv"
   },
@@ -106,7 +107,8 @@
         "text": {"field": "Country name", "type": "nominal"},
         "color": {"value": "black"},
         "opacity": {
-          "condition": {"test": "datum['Country name'] == 'China' || datum['Country name'] == 'Finland' || datum['Country name'] == 'United States of America' || datum['Country name'] == 'United Kingdom' || datum['Country name'] == 'France' || datum['Country name'] == 'Japan' || datum['Country name'] == 'South Africa' || datum['Country name'] == 'Afghanistan' || datum['Country name'] == 'India' || datum['Country name'] == 'Niger' || datum['Country name'] == 'Australia' || datum['Country name'] == 'Russia'", "value": 1},
+          "condition": {"test": "datum['Country name'] == 'China' || datum['Country name'] == 'Finland' || datum['Country name'] == 'United States of America' || datum['Country name'] == 'United Kingdom' || datum['Country name'] == 'France' || datum['Country name'] == 'Japan' || datum['Country name'] == 'South Africa' || datum['Country name'] == 'Afghanistan' || datum['Country name'] == 'India' || datum['Country name'] == 'Niger' || datum['Country name'] == 'Australia' || datum['Country name'] == 'Russia' || datum['Country name'] == 'Costa Rica'",
+            "value": 1},
           "value": 0
         },
         "tooltip": [

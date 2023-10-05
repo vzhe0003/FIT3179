@@ -1,7 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Health Life Expectancy 2021",
-  "width": 800,
+  "width": "container",
   "height": 400,
   "projection": { "type": "equalEarth" },
   "data": {

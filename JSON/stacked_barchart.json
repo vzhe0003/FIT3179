@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": "400",
   "title": "Stacked Bar Chart (Sorted by Ladder Score)",
-  "width": 1500,
-  "height": 400,
   "data": {
     "url": "https://raw.githubusercontent.com/vzhe0003/FIT3179_assignment2/main/data/world-happiness-report-2021.csv",
     "format": {"type": "csv"}

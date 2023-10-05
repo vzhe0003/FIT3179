@@ -1,59 +1,8 @@
-<!--<!DOCTYPE html>-->
-<!--<html>-->
-<!--<head>-->
-<!--  &lt;!&ndash; Import Vega & Vega-Lite (does not have to be from CDN) &ndash;&gt;-->
-<!--  <script src="https://cdn.jsdelivr.net/npm/vega@5.22.1"></script>-->
-<!--  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.5.0"></script>-->
-<!--  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.21.0"></script>-->
-
-<!--  &lt;!&ndash; CSS file &ndash;&gt;-->
-<!--  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">-->
-
-<!--</head>-->
-<!--<body>-->
-
-<!--<div id="happiness_map"></div>-->
-<!--<div id="bubble_chart"></div>-->
-<!--<div id="circle_mark"></div>-->
-<!--<div id="life_expectancy"></div>-->
-<!--<div id="stacked_barchart"></div>-->
-
-<!--<script type="text/javascript">-->
-
-<!--  var spec1 = "JSON/map.json";-->
-<!--  var spec2 = "JSON/bubble_chart.json";-->
-<!--  var spec3 = "JSON/circle_mark.json";-->
-<!--  var spec4 = "JSON/life_expectancy.json";-->
-<!--  var spec5 = "JSON/stacked_barchart.json";-->
-
-<!--  vegaEmbed('#happiness_map', spec1).then(function(result) {-->
-<!--    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view-->
-<!--  }).catch(console.error);-->
-
-<!--  vegaEmbed('#bubble_chart', spec2).then(function(result) {-->
-<!--    // Access the Vega view instance as result.view-->
-<!--  }).catch(console.error);-->
-
-<!--  vegaEmbed('#circle_mark', spec3).then(function(result) {-->
-<!--    // Access the Vega view instance as result.view-->
-<!--  }).catch(console.error);-->
-
-<!--  vegaEmbed('#life_expectancy', spec4).then(function(result) {-->
-<!--    // Access the Vega view instance as result.view-->
-<!--  }).catch(console.error);-->
-
-<!--  vegaEmbed('#stacked_barchart', spec5).then(function(result) {-->
-<!--    // Access the Vega view instance as result.view-->
-<!--  }).catch(console.error);-->
-
-<!--</script>-->
-
-<!--</body>-->
-<!--</html>-->
-
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
   <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
   <script src="https://cdn.jsdelivr.net/npm/vega@5.22.1"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.5.0"></script>
@@ -61,14 +10,274 @@
 
   <!-- CSS file -->
   <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+
+  <style>
+
+
+
+
+    .chart-container {
+      width: 100%;
+      height: 100%;
+    }
+
+    .title_central{
+      text-align: center;
+    }
+
+    #intro {
+      padding-right: 20px;
+    }
+    #visualization1{
+      height: 700px;
+      width: 50%;
+      float: left;
+    }
+
+    #vis1{
+      height: 700px;
+      float: right;
+      width: 50%;
+    }
+
+    #visualization{
+      width: 65%;
+      float: right;
+      height: 700px;
+    }
+
+    #vis{
+      height: 700px;
+      width: 35%;
+      float: left;
+    }
+
+    body {
+      padding-top: 50px; /* Add padding to the top of the body */
+      padding-bottom: 50px; /* Add padding to the bottom of the body */
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+
+    #footer_bottom {
+      padding: 10px 0;
+      text-align: center;
+    }
+
+
+  </style>
 </head>
 <body>
 
-<div id="visualization"></div>
-<div id="visualization1"></div>
-<div id="visualization2"></div>
-<div id="visualization3"></div>
-<div id="visualization4"></div>
+<div>
+  <h1 class="title_central"><b>Global Happiness Report 2021 </b></h1>
+  <p class="title_central">Author: Victor Zheng 33104689</p>
+</div>
+
+<div id="intro_container">
+  <div id="intro_title">
+    <br>
+    <h2>Introduction</h2>
+  </div>
+  <br>
+  <div id="intro_text">
+    <p>
+      Welcome to the Global Happiness Report 2021, a compelling exploration of worldwide well-being.
+      Finland claims the coveted title of the happiest country this year, sparking our curiosity about the underlying factors shaping this bliss.
+      In this report, we dissect the essence of happiness by examining key attributes like "GDP per capita," "Social support," "Life Expectancy," "Freedom to make life choices," and "Generosity."
+
+      While Finland's top position signifies more than mere statistics, our focus extends beyond rankings.
+      We delve into these factors, each representing a crucial aspect of societal welfare.
+      Economic prosperity, social bonds, health, freedom, and generosity collectively weave the fabric of happiness for any nation.
+    </p>
+  </div>
+</div>
+
+<br>
+<br>
+<br>
+<div id="vis4_container">
+  <div class="intro_container">
+    <h2 class="title_central">Understanding Five Key Attributes</h2>
+    <p>
+      <strong>GDP Per Capita:</strong> GDP per capita stands for Gross Domestic Product per capita, representing the average economic output per person in a specific country.
+      A higher GDP per capita indicates a higher standard of living and economic prosperity for the citizens.
+    </p>
+    <p>
+      <strong>Social Support:</strong> Social Support measures the presence of a social network that can provide assistance and support to individuals in times of need.
+      It includes both emotional and tangible support, fostering a sense of belonging and security.
+    </p>
+    <p>
+      <strong>Life Expectancy:</strong> Life Expectancy refers to the average number of years a person can expect to live,
+      indicating the overall health and well-being of a population. Higher life expectancy reflects better healthcare, living conditions, and quality of life.
+    </p>
+    <p>
+      <strong>Freedom to Make Life Choices:</strong> This attribute measures the degree of freedom individuals have in making their life choices,
+      reflecting individual rights, liberties, and opportunities within a society. High scores indicate ample opportunities for personal and professional growth.
+    </p>
+    <p>
+      <strong>Generosity:</strong> Generosity assesses the inclination of individuals in a country to engage in charitable activities,
+      donate money, or volunteer their time to help others. It reflects altruistic behavior and social responsibility.
+    </p>
+  </div>
+</div>
+
+<div class="chart-container" id="visualization4"></div>
+<div class="intro_container">
+  <h3>The Happiness Ladder Score:</h3>
+  <p>After careful consideration and analysis of these vital attributes, they coalesce to form the <strong>Happiness Ladder Score</strong>.
+    This score is not merely a numerical representation; it encapsulates the essence of a nation's overall well-being and happiness.
+    It symbolizes the harmony between economic stability, social connections, health, freedom, and altruism.
+    The Happiness Ladder Score is a testament to the collective efforts of a society, illustrating the culmination of various factors that define a nation's quality of life and happiness.</p>
+</div>
+<br>
+<br>
+<br>
+
+
+<div id="vis3_container">
+  <div class="intro_container">
+    <h2 class="title_central">Exploring Life Expectancy: A Spectrum of Well-Being</h2>
+    <p>
+      Life expectancy, a fundamental metric of a nation's health, reflects the average number of years a person is expected to live.
+      It is a poignant indicator of a society's overall well-being, healthcare access, and living conditions.
+      In our exploration, we visualize life expectancy across different countries, unveiling a diverse spectrum of experiences and outcomes.
+    </p>
+    <h3>Understanding the Color Coding:</h3>
+    <p>
+      In this chart, life expectancy is represented through a gradient of colors. <strong>Deep blue hues</strong>
+      signify regions where life expectancy is comparatively shorter, indicating areas where health challenges and socio-economic factors might impact longevity.
+      On the other hand, <strong>light yellow tones</strong> symbolize regions with longer life expectancy, indicating societies where healthcare systems, nutrition,
+      and overall well-being are robust, leading to extended lifespans.
+    </p>
+    <p>
+      As you navigate the chart, observe the vivid colors and consider the deeper societal implications they represent.
+      The gradient offers insights into global disparities in health and serves as a powerful reminder of the ongoing efforts needed to enhance well-being and longevity across the world.
+    </p>
+  </div>
+  <div><h3 class="title_central">Health Life Expectancy 2021</h3></div>
+  <div class="chart-container" id="visualization3"></div>
+</div>
+
+<br>
+<br>
+<br>
+
+<div id="vis2_container">
+  <div class="intro-container">
+    <div id="intro">
+      <h2 class="title_central">Exploring GDP and Happiness: Wealth and Well-Being</h2>
+      <p>
+        Our interactive bubble chart delves into the intricate relationship between a nation's economic prosperity,
+        as measured by GDP per capita, and its citizens' happiness. By visualizing this data, we aim to uncover patterns and disparities that exist on a global scale,
+        shedding light on the nuanced interplay between wealth and well-being.
+      </p>
+      <h3>Decoding the Colors:</h3>
+      <p>
+        Each region on the chart is represented by a distinctive color,
+        offering a visual key to understanding the geographical distribution of happiness levels.
+        This color-coded approach allows you to discern trends across continents and observe the diverse happiness experiences worldwide.
+      </p>
+      <h3>The Wealth-Happiness Nexus:</h3>
+      <p>
+        As you explore the bubbles, notice that wealthier countries are more likely to have higher happiness scores.
+        This correlation underscores the significant role that economic stability and financial security play in enhancing the overall happiness of a nation's populace.
+        While wealth alone cannot guarantee happiness, it often provides the resources and opportunities necessary for a higher quality of life,
+        better healthcare, and access to education, contributing to an overall sense of contentment.
+      </p>
+      <p>
+        Dive into the chart, analyze the bubbles, and gain insights into the complex dynamics between wealth and happiness across various regions of the world.
+      </p>
+    </div>
+  </div>
+  <div class="chart-container" id="visualization2"></div>
+</div>
+
+
+<br>
+<br>
+<br>
+
+
+<div id="vis1_container">
+  <div id= "vis1" class="intro_container">
+    <div class="title_central">
+      <h2>
+        Exploring Happiness Scores Across the Globe
+      </h2>
+    </div>
+    <div class="intro_text">
+      <p>
+        In the vibrant tapestry of global happiness, regions emerge as distinct hues, each contributing to the intricate mosaic of our world's well-being.
+        Among these, Europe stands as a beacon of contentment, with an average happiness score that consistently ranks among the highest. This region,
+        rich in cultural diversity and economic stability, fosters an environment where citizens experience a remarkable sense of fulfillment and life satisfaction.
+      </p>
+      <p>
+        Following closely, the North America and ANZ (Australia and New Zealand) region paints a similarly cheerful picture.
+        Blessed with prosperity and opportunities, countries in this region reflect high average happiness scores, reflecting the positive impact of social support,
+        economic prosperity, and individual freedoms on the collective happiness of their people.
+        <br>
+        However, not all corners of the world bask in the same rays of happiness. South Asia, with Afghanistan at its epicenter,
+        faces significant challenges. Here, adverse socio-economic conditions and political instability cast shadows on the happiness of its inhabitants,
+        resulting in comparatively lower average happiness scores. The people in this region demonstrate remarkable resilience in the face of adversity,
+        highlighting the complex interplay between happiness and societal challenges.
+        <br>
+        Additionally, the sub-Saharan Africa region experiences a similar narrative, with varying degrees of happiness observed across its diverse nations.
+        While some countries shine brightly, demonstrating impressive levels of happiness, others grapple with challenges, reflecting in their lower average scores.
+        This region's journey toward greater happiness is marked by diverse efforts, emphasizing the importance of community, social support, and sustainable development.
+      </p>
+
+    </div>
+  </div>
+
+  <div class="chart-container" id="visualization1"></div>
+</div>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+<div id="final_chart_container">
+  <div id="vis" class="intro_container">
+    <div class="title_central">
+      <h2>
+        Global Happiness Score Ranking: A Spectrum of Well-Being
+      </h2>
+    </div>
+    <div class="intro_text">
+      <p>
+        Our journey through the nuances of happiness culminates in this comprehensive chart, presenting the global ranking of countries based on their happiness scores.
+        Each country is represented by a distinct color on this spectrum, with deep blue hues indicating higher happiness scores and transitioning to light green shades, reflecting comparatively lower scores.
+      </p>
+      <p>
+        The deep blue regions on the chart signify nations where citizens experience exceptional well-being, often characterized by strong social support, economic prosperity, and a myriad of opportunities.
+        As the color gradually shifts to lighter shades, it signifies countries where challenges such as economic disparities, social unrest, or political instability impact the overall happiness of the population.
+        <br>
+        This vibrant visual representation captures the rich diversity of happiness experiences worldwide. It highlights the successes and challenges faced by nations, offering profound insights into the complex interplay of factors shaping our collective happiness.
+        Explore this chart to gain a deep understanding of the global happiness landscape, where every color tells a unique story of human well-being.
+      </p>
+    </div>
+  </div>
+  <div class="chart-container" id="visualization"></div>
+</div>
+
+
+
+<footer id="footer_bottom">
+  <a id="footer">&copy Student Name: Victor Zheng | Student ID: 33104689 | FIT3179 Visualisation II</a>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
 
 
 <script type="text/javascript">
@@ -101,10 +310,7 @@
     // Access the Vega view instance (result.view) if needed
   }).catch(console.error);
 
-
-
 </script>
 
 </body>
 </html>
-
