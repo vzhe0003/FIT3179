@@ -5,40 +5,120 @@
   "data": {
     "url": "https://raw.githubusercontent.com/vzhe0003/FIT3179_assignment2/main/world-happiness-report-2021.csv"
   },
-  "mark": {
-    "type": "circle",
-    "filled": true,
-    "opacity": 0.7
-  },
-  "encoding": {
-    "x": {
-      "field": "Logged GDP per capita",
-      "type": "quantitative",
-      "title": "Logged GDP per capita",
-      "scale": {"domain": [6, 12]}
+  "params": [
+
+    {
+      "name": "Continent_selection",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "Western Europe",
+          "North America and ANZ",
+          "Middle East and North Africa",
+          "Latin America and Caribbean",
+          "Central and Eastern Europe",
+          "East Asia",
+          "Southeast Asia",
+          "Commonwealth of Independent States",
+          "Sub-Saharan Africa"
+        ],
+        "labels": [
+          "Show All",
+          "Western Europe",
+          "North America and ANZ",
+          "Middle East and North Africa",
+          "Latin America and Caribbean",
+          "Central and Eastern Europe",
+          "East Asia",
+          "Southeast Asia",
+          "Commonwealth of Independent States",
+          "Sub-Saharan Africa"
+        ],
+        "name": "Regional Selector: "
+      }
+    }
+  ],
+  "transform": [
+    {
+      "filter": "Continent_selection == null || datum['Regional indicator'] == Continent_selection"
+    }
+  ],
+
+  "layer": [
+    {
+      "mark": {
+        "type": "circle",
+        "filled": true,
+        "opacity": 0.7
+      },
+      "encoding": {
+        "x": {
+          "field": "Logged GDP per capita",
+          "type": "quantitative",
+          "title": "Logged GDP per capita",
+          "scale": {"domain": [6, 12]}
+        },
+        "y": {
+          "field": "Ladder score",
+          "type": "quantitative",
+          "title": "Happiness Score",
+          "scale": {"domain": [2, 8.5]}
+        },
+        "color": {
+          "field": "Regional indicator",
+          "type": "nominal",
+          "title": "Region"
+        },
+        "size": {
+          "field": "Ladder score",
+          "type": "quantitative",
+          "title": "Happiness Score",
+          "scale": {"range": [20, 700]}
+        },
+        "tooltip": [
+          {"field": "Country name", "type": "nominal", "title": "Country"},
+          {"field": "Ladder score", "type": "quantitative", "title": "Happiness Score"},
+          {"field": "Logged GDP per capita", "type": "quantitative", "title": "Logged GDP per capita"},
+          {"field": "Regional indicator", "type": "nominal", "title": "Region"}
+        ]
+
+      }
     },
-    "y": {
-      "field": "Ladder score",
-      "type": "quantitative",
-      "title": "Happiness Score",
-      "scale": {"domain": [2, 8.5]}
-    },
-    "color": {
-      "field": "Regional indicator",
-      "type": "nominal",
-      "title": "Region"
-    },
-    "size": {
-      "field": "Ladder score",
-      "type": "quantitative",
-      "title": "Happiness Score",
-      "scale": {"range": [20, 700]}
-    },
-    "tooltip": [
-      {"field": "Country name", "type": "nominal", "title": "Country"},
-      {"field": "Ladder score", "type": "quantitative", "title": "Happiness Score"},
-      {"field": "Logged GDP per capita", "type": "quantitative", "title": "Logged GDP per capita"},
-      {"field": "Regional indicator", "type": "nominal", "title": "Region"}
-    ]
-  }
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 8
+      },
+      "encoding": {
+        "x": {
+          "field": "Logged GDP per capita",
+          "type": "quantitative",
+          "scale": {"domain": [6, 12]}
+        },
+        "y": {
+          "field": "Ladder score",
+          "type": "quantitative",
+          "scale": {"domain": [2, 8.5]}
+        },
+        "text": {"field": "Country name", "type": "nominal"},
+        "color": {"value": "black"},
+        "opacity": {
+          "condition": {"test": "datum['Country name'] == 'China' || datum['Country name'] == 'Finland' || datum['Country name'] == 'United States of America' || datum['Country name'] == 'United Kingdom' || datum['Country name'] == 'France' || datum['Country name'] == 'Japan' || datum['Country name'] == 'South Africa' || datum['Country name'] == 'Afghanistan' || datum['Country name'] == 'India' || datum['Country name'] == 'Niger' || datum['Country name'] == 'Australia' || datum['Country name'] == 'Russia'", "value": 1},
+          "value": 0
+        },
+        "tooltip": [
+          {"field": "Country name", "type": "nominal", "title": "Country"},
+          {"field": "Ladder score", "type": "quantitative", "title": "Happiness Score"},
+          {"field": "Logged GDP per capita", "type": "quantitative", "title": "Logged GDP per capita"},
+          {"field": "Regional indicator", "type": "nominal", "title": "Region"}
+        ]
+
+      }
+    }
+  ]
 }
+
+
