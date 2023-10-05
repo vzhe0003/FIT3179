@@ -3,7 +3,7 @@
   "width": 800,
   "height": 600,
   "data": {
-    "url": "https://raw.githubusercontent.com/vzhe0003/FIT3179_assignment2/main/world-happiness-report-2021.csv"
+    "url": "https://raw.githubusercontent.com/vzhe0003/FIT3179_assignment2/main/data/world-happiness-report-2021.csv"
   },
   "params": [
 
