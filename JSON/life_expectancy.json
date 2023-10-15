@@ -38,7 +38,7 @@
         "color": {
           "field": "Healthy life expectancy",
           "type": "quantitative",
-          "scale": { "scheme": "viridis" }
+          "scale": { "scheme": "yelloworangered" }
         },
         "tooltip": [
           { "field": "properties.NAME", "type": "nominal", "title": "Country" },
@@ -48,6 +48,6 @@
     }
   ],
   "config": {
-    "legend": { "title": "Healthy Life Expectancy", "orient": "bottom-right" }
+    "legend": { "title": "Healthy Life Expectancy", "orient": "bottom-right", "title": "Life Expectancy"}
   }
 }

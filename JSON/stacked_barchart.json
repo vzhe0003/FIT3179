@@ -51,7 +51,7 @@
   "mark": "bar",
   "encoding": {
     "x": {"field": "Country name", "type": "nominal", "title": "Country", "sort": {"field": "Ladder score", "order": "descending"}},
-    "y": {"field": "value", "type": "quantitative", "title": "Values"},
+    "y": {"field": "value", "type": "quantitative", "title": "Total Scores"},
     "color": {
       "field": "variable",
       "type": "nominal",

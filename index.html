@@ -63,6 +63,10 @@
       padding: 10px 0;
       text-align: center;
     }
+    .separator-line {
+      border: 1px solid black; /* Set border properties */
+      margin: 10px 0; /* Adjust margin space above and below the line */
+    }
 
 
   </style>
@@ -95,7 +99,12 @@
 
 <br>
 <br>
+<hr class="separator-line">
+<hr class="separator-line">
 <br>
+<br>
+
+
 <div id="vis4_container">
   <div class="intro_container">
     <h2 class="title_central">Understanding Five Key Attributes</h2>
@@ -122,6 +131,7 @@
   </div>
 </div>
 
+
 <div class="chart-container" id="visualization4"></div>
 <div class="intro_container">
   <h3>The Happiness Ladder Score:</h3>
@@ -130,10 +140,14 @@
     It symbolizes the harmony between economic stability, social connections, health, freedom, and altruism.
     The Happiness Ladder Score is a testament to the collective efforts of a society, illustrating the culmination of various factors that define a nation's quality of life and happiness.</p>
 </div>
-<br>
-<br>
-<br>
 
+<br>
+<br>
+<br>
+<hr class="separator-line">
+<hr class="separator-line">
+<br>
+<br>
 
 <div id="vis3_container">
   <div class="intro_container">
@@ -143,11 +157,11 @@
       It is a poignant indicator of a society's overall well-being, healthcare access, and living conditions.
       In our exploration, we visualize life expectancy across different countries, unveiling a diverse spectrum of experiences and outcomes.
     </p>
-    <h3>Understanding the Color Coding:</h3>
+    <h4>Understanding the Color Coding:</h4>
     <p>
-      In this chart, life expectancy is represented through a gradient of colors. <strong>Deep blue hues</strong>
+      In this chart, life expectancy is represented through a gradient of colors. <strong>light orange</strong>
       signify regions where life expectancy is comparatively shorter, indicating areas where health challenges and socio-economic factors might impact longevity.
-      On the other hand, <strong>light yellow tones</strong> symbolize regions with longer life expectancy, indicating societies where healthcare systems, nutrition,
+      On the other hand, <strong>deep red</strong> symbolize regions with longer life expectancy, indicating societies where healthcare systems, nutrition,
       and overall well-being are robust, leading to extended lifespans.
     </p>
     <p>
@@ -162,6 +176,10 @@
 <br>
 <br>
 <br>
+<hr class="separator-line">
+<hr class="separator-line">
+<br>
+<br>
 
 <div id="vis2_container">
   <div class="intro-container">
@@ -172,13 +190,13 @@
         as measured by GDP per capita, and its citizens' happiness. By visualizing this data, we aim to uncover patterns and disparities that exist on a global scale,
         shedding light on the nuanced interplay between wealth and well-being.
       </p>
-      <h3>Decoding the Colors:</h3>
+      <h4>Decoding the Colors:</h4>
       <p>
         Each region on the chart is represented by a distinctive color,
         offering a visual key to understanding the geographical distribution of happiness levels.
         This color-coded approach allows you to discern trends across continents and observe the diverse happiness experiences worldwide.
       </p>
-      <h3>The Wealth-Happiness Nexus:</h3>
+      <h4>The Wealth-Happiness Nexus:</h4>
       <p>
         As you explore the bubbles, notice that wealthier countries are more likely to have higher happiness scores.
         This correlation underscores the significant role that economic stability and financial security play in enhancing the overall happiness of a nation's populace.
@@ -186,7 +204,7 @@
         better healthcare, and access to education, contributing to an overall sense of contentment.
       </p>
       <p>
-        Dive into the chart, analyze the bubbles, and gain insights into the complex dynamics between wealth and happiness across various regions of the world.
+        Dive into the chart, analyze the bubbles, every bubble with name is the top happiness score country in it Region
       </p>
     </div>
   </div>
@@ -246,6 +264,7 @@
 <div id="final_chart_container">
   <div id="vis" class="intro_container">
     <div class="title_central">
+
       <h2>
         Global Happiness Score Ranking: A Spectrum of Well-Being
       </h2>
@@ -258,9 +277,6 @@
       <p>
         The deep blue regions on the chart signify nations where citizens experience exceptional well-being, often characterized by strong social support, economic prosperity, and a myriad of opportunities.
         As the color gradually shifts to lighter shades, it signifies countries where challenges such as economic disparities, social unrest, or political instability impact the overall happiness of the population.
-        <br>
-        This vibrant visual representation captures the rich diversity of happiness experiences worldwide. It highlights the successes and challenges faced by nations, offering profound insights into the complex interplay of factors shaping our collective happiness.
-        Explore this chart to gain a deep understanding of the global happiness landscape, where every color tells a unique story of human well-being.
       </p>
     </div>
   </div>
@@ -288,29 +304,30 @@
   var spec3 = 'JSON/life_expectancy.json';
   var spec4 = 'JSON/stacked_barchart.json';
 
-  vegaEmbed('#visualization', spec).then(function(result) {
+  vegaEmbed('#visualization', spec, {"actions": false}).then(function(result) {
     // Access the Vega view instance as result.view
   }).catch(console.error);
 
-  vegaEmbed('#visualization1', spec1).then(function(result) {
+  vegaEmbed('#visualization1', spec1, {"actions": false}).then(function(result) {
     // Access the Vega view instance as result.view
   }).catch(console.error);
 
-  vegaEmbed('#visualization3', spec3)
+  vegaEmbed('#visualization3', spec3, {"actions": false})
           .then(function (result) {
             // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
           })
           .catch(console.error);
 
-  vegaEmbed('#visualization2', spec2).then(function(result) {
+  vegaEmbed('#visualization2', spec2, {"actions": false}).then(function(result) {
     // Access the Vega view instance as result.view
   }).catch(console.error);
 
-  vegaEmbed('#visualization4', spec4).then(function(result) {
+  vegaEmbed('#visualization4', spec4, {"actions": false}).then(function(result) {
     // Access the Vega view instance (result.view) if needed
   }).catch(console.error);
 
 </script>
+
 
 </body>
 </html>

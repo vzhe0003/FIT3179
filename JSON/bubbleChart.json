@@ -107,7 +107,7 @@
         "text": {"field": "Country name", "type": "nominal"},
         "color": {"value": "black"},
         "opacity": {
-          "condition": {"test": "datum['Country name'] == 'China' || datum['Country name'] == 'Finland' || datum['Country name'] == 'United States of America' || datum['Country name'] == 'United Kingdom' || datum['Country name'] == 'France' || datum['Country name'] == 'Japan' || datum['Country name'] == 'South Africa' || datum['Country name'] == 'Afghanistan' || datum['Country name'] == 'India' || datum['Country name'] == 'Niger' || datum['Country name'] == 'Australia' || datum['Country name'] == 'Russia' || datum['Country name'] == 'Costa Rica'",
+          "condition": {"test": "datum['Country name'] == 'Finland' || datum['Country name'] == 'United States of America' || datum['Country name'] == 'Israel' || datum['Country name'] == 'Taiwan Province of China' || datum['Country name'] == 'Mauritius' || datum['Country name'] == 'Afghanistan' || datum['Country name'] == 'Czech Republic' || datum['Country name'] == 'Singapore' || datum['Country name'] == 'Australia' || datum['Country name'] == 'Kazakhstan' || datum['Country name'] == 'Costa Rica'",
             "value": 1},
           "value": 0
         },
